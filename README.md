@@ -43,8 +43,11 @@ cd random-wheel/backend
 # 2. Create and activate a virtual environment
 python -m venv env
   Windows
+  
    env\Scripts\activate
+   
    Mac/Linux
+   
    source env/bin/activate
 # 3. Install dependencies
  pip install django
