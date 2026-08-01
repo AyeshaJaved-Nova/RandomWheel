@@ -14,25 +14,36 @@ Communication: fetch() calling a Django JSON API endpoint
 
 # Project structure
 random-wheel/
+
 ├── backend/
+
 │   ├── backend/          # Django project settings & main urls.py
+
 │   ├── wheel/             # App: views, urls, templates, static files
+
 │   │   ├── templates/wheel/index.html
+
 │   │   ├── static/wheel/style.css
+
 │   │   ├── static/wheel/script.js
+
 │   │   ├── views.py
+
 │   │   └── urls.py
+
 │   └── manage.py
+
 └── README.md
+
 # Setup & installation
 # 1. Clone the repository
-git clone https://github.com/your-username/random-wheel.git
+git clone https://github.com/AyeshaJaved-Nova/Random_Wheel.git
    cd random-wheel/backend
 # 2. Create and activate a virtual environment
 python -m venv env
-   # Windows
+  Windows
    env\Scripts\activate
-   # Mac/Linux
+   Mac/Linux
    source env/bin/activate
 # 3. Install dependencies
  pip install django
