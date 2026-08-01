@@ -24,3 +24,17 @@ random-wheel/
 │   │   └── urls.py
 │   └── manage.py
 └── README.md
+# Setup & installation
+# 1. Clone the repository
+git clone https://github.com/your-username/random-wheel.git
+   cd random-wheel/backend
+# 2. Create and activate a virtual environment
+python -m venv env
+   # Windows
+   env\Scripts\activate
+   # Mac/Linux
+   source env/bin/activate
+# 3. Install dependencies
+ pip install django
+# 4. Run the development server
+   python manage.py runserver
