@@ -38,7 +38,8 @@ random-wheel/
 # Setup & installation
 # 1. Clone the repository
 git clone https://github.com/AyeshaJaved-Nova/Random_Wheel.git
-   cd random-wheel/backend
+
+cd random-wheel/backend
 # 2. Create and activate a virtual environment
 python -m venv env
   Windows
