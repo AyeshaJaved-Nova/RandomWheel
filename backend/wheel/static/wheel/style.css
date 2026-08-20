@@ -1,0 +1,123 @@
+* {
+    font-family: 'Poppins', 'Segoe UI', 'Franklin Gothic Medium', Arial, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(242, 242, 223);
+    color: #010101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    color: #141413;
+}
+
+.wheel {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(#1b4332, #2d6a4f, #40916c, #74c69d, #95d5b2, #1b4332);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    transition: transform 3s ease-out;
+    box-shadow: 0 0 25px rgba(168, 230, 161, 0.25);
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#result {
+    background-color: #fdfdfb;
+    color: #22261f;
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08);
+}
+
+.range-inputs {
+    margin: 60px 10px 0 10px;
+    padding: 5px;
+}
+
+label {
+    font-size: 0.9rem;
+    color: #0e0e0e;
+}
+
+input[type="number"] {
+    width: 55px;
+    padding: 6px 8px;
+    margin-left: 6px;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    background: #1f2026;
+    color: #f2f2f2;
+    font-size: 0.9rem;
+}
+
+button {
+    padding: 10px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #2e2f36;
+    color: #f2f2f2;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #a8e6a1;
+    color: #14151a;
+}
+
+#status {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: rgb(23, 110, 23);
+    min-height: 20px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}

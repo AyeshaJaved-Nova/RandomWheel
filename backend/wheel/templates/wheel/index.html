@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'wheel/style.css' %}">
+    <title>Wheel</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Random Wheel </h1>
+    <div class="wheel">
+        <span id="result">?</span>
+    </div>
+    <div class="controls">
+        <div class="input-group">
+            <label for="minInput">min:
+            <input type="number" id="minInput" value=1></label>
+            <label for="maxInput">max:
+            <input type="number" id="maxInput" value=200></label>
+        </div>
+            <button id="spinBtn">Spin with my range</button>
+            <button id="surpriseBtn">let the wheel decide</button>
+    </div>
+    <p id="status"></p>
+    </div>
+     <script src="{% static 'wheel/script.js' %}"></script>
+</body>
+</html>
