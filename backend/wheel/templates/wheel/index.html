@@ -4,27 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'wheel/style.css' %}">
-    <title>Wheel</title>
+    <meta name="theme-color" content="#f8f8f5">
+    <meta name="description" content="Make the little decisions fun. Set a number range and let Random Wheeeel pick for you.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'wheel/style.css' %}?v=2">
+    <title>Random Wheeeel — Make a choice</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to the Random Wheel </h1>
-    <div class="wheel">
-        <span id="result">?</span>
+    <div class="page-shell">
+        <header class="topbar">
+            <a class="brand" href="#home" aria-label="Random Wheeeel home">
+                <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span>Random <strong>Wheeeel</strong></span>
+            </a>
+            <a class="top-link" href="#how-it-works">How it works <span aria-hidden="true">↗</span></a>
+        </header>
+
+        <main id="home">
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-copy">
+                    <div class="eyebrow"><span class="live-dot"></span> YOUR FRIENDLY DECISION-MAKER</div>
+                    <h1 id="hero-title">Big or small,<br>let’s <span>leave it</span><br>to chance<span class="period">.</span></h1>
+                    <p class="intro">Can’t pick a number? Give the wheel a range and let fate do its thing. No overthinking required.</p>
+                    <div class="quick-facts">
+                        <div class="fact"><span class="fact-icon">✳</span><span><strong>Fair &amp; random</strong><small>Every number gets a shot</small></span></div>
+                        <div class="fact"><span class="fact-icon bolt">↯</span><span><strong>Ready in a spin</strong><small>Your next answer awaits</small></span></div>
+                    </div>
+                    <a class="scroll-cue" href="#spinner"><span>↓</span> GIVE IT A SPIN</a>
+                </div>
+
+                <div class="game-card" id="spinner">
+                    <div class="card-heading"><div><span class="section-kicker">THE NUMBER WHEEL</span><h2>Let’s find your number</h2></div><span class="sparkle" aria-hidden="true">✳</span></div>
+                    <div class="wheel-stage">
+                        <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+                        <span class="pointer" aria-hidden="true"></span>
+                        <div class="wheel" aria-label="Random number wheel">
+                            <div class="wheel-inner"><span id="result" aria-live="polite">?</span><small>YOUR PICK</small></div>
+                        </div>
+                        <span class="orbit-dot dot-one"></span><span class="orbit-dot dot-two"></span>
+                    </div>
+                    <p id="status" class="status" role="status" aria-live="polite">Set your range, then give it a whirl.</p>
+                    <div class="range-panel">
+                        <div class="range-title"><span>YOUR RANGE</span><span class="range-limit">1 — 200</span></div>
+                        <div class="input-group">
+                            <label for="minInput"><span>FROM</span><input type="number" id="minInput" value="1" min="1" max="200" inputmode="numeric"></label>
+                            <span class="range-dash" aria-hidden="true">—</span>
+                            <label for="maxInput"><span>TO</span><input type="number" id="maxInput" value="200" min="1" max="200" inputmode="numeric"></label>
+                        </div>
+                    </div>
+                    <button id="spinBtn" class="spin-button" type="button"><span>Spin my range</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+                    <button id="surpriseBtn" class="surprise-button" type="button"><span aria-hidden="true">✦</span> Surprise me <span class="surprise-range">1–200</span></button>
+                    <div class="card-foot"><span><i></i> ALWAYS RANDOM</span><span>MADE FOR THE “UMM…” MOMENTS</span></div>
+                </div>
+                <span class="hero-decoration decoration-star" aria-hidden="true">✳</span>
+                <span class="hero-decoration decoration-squiggle" aria-hidden="true">〰</span>
+            </section>
+
+            <section class="how" id="how-it-works">
+                <div class="how-heading"><span class="section-kicker">SIMPLE AS 1, 2, SPIN</span><h2>Decision fatigue, meet your match.</h2></div>
+                <div class="steps">
+                    <article class="step"><span class="step-number">01</span><div><h3>Pick your range</h3><p>Choose any numbers between 1 and 200.</p></div><span class="step-symbol">↔</span></article>
+                    <article class="step"><span class="step-number">02</span><div><h3>Give it a whirl</h3><p>Hit spin and watch the wheel work its magic.</p></div><span class="step-symbol spin-symbol">⟳</span></article>
+                    <article class="step"><span class="step-number">03</span><div><h3>There’s your answer</h3><p>One random number. Zero second-guessing.</p></div><span class="step-symbol">✦</span></article>
+                </div>
+            </section>
+        </main>
+        <footer><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>Random <strong>Wheeeel</strong></span></a><span>A tiny spin for your next big decision.</span><span>© RANDOM WHEEEEL</span></footer>
     </div>
-    <div class="controls">
-        <div class="input-group">
-            <label for="minInput">min:
-            <input type="number" id="minInput" value=1></label>
-            <label for="maxInput">max:
-            <input type="number" id="maxInput" value=200></label>
-        </div>
-            <button id="spinBtn">Spin with my range</button>
-            <button id="surpriseBtn">let the wheel decide</button>
-    </div>
-    <p id="status"></p>
-    </div>
-     <script src="{% static 'wheel/script.js' %}"></script>
+    <script src="{% static 'wheel/script.js' %}?v=2"></script>
 </body>
 </html>
