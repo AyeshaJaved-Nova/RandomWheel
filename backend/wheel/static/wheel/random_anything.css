@@ -1,0 +1,475 @@
+.anything-card {
+    width: min(100%, 500px);
+}
+
+.anything-card .wheel-stage {
+    height: 245px;
+}
+
+.anything-wheel {
+    width: 210px;
+    height: 210px;
+    border: 2px dashed #9cb1c8;
+    background: #f5f8fb;
+    box-shadow: none;
+}
+
+.wheel-choices {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.wheel-choice {
+    position: absolute;
+    display: block;
+    min-width: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+}
+
+.wheel-choice-button {
+    display: block;
+    max-width: 100%;
+    padding: 2px 3px;
+    overflow: hidden;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 3px rgba(24, 49, 75, 0.9);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.wheel-choice-button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 1px;
+    border-radius: 3px;
+}
+
+.wheel-choice-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.anything-wheel::before {
+    display: none;
+}
+
+.anything-wheel .wheel-inner {
+    width: 84px;
+    height: 84px;
+    padding: 8px;
+    background: #ffffff;
+    box-shadow: none;
+    transition: transform 3s cubic-bezier(0.12, 0.76, 0.2, 1);
+}
+
+#anythingResult {
+    max-width: 100%;
+    color: #315d9a;
+    font-size: 15px;
+    line-height: 1.2;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+#anythingCount {
+    color: #7489a3;
+    text-align: center;
+}
+
+.choice-form {
+    margin-top: 12px;
+}
+
+.choice-input-label {
+    display: block;
+    margin-bottom: 6px;
+    color: #52657b;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.choice-input-row {
+    display: flex;
+    gap: 8px;
+}
+
+.choice-input-row input {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #c8d9eb;
+    border-radius: 5px;
+    color: #26364b;
+    background: #ffffff;
+}
+
+.choice-input-row input:focus {
+    outline: 2px solid #9dc7e8;
+    outline-offset: 1px;
+}
+
+.small-action {
+    min-width: 72px;
+    padding: 0 14px;
+    border: 1px solid #397cc2;
+    border-radius: 5px;
+    background: #edf5fc;
+    color: #233b61;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.small-action:hover {
+    background: #dcecf9;
+}
+
+.small-action:disabled,
+.wheel-choice-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.anything-card .spin-button {
+    min-height: 46px;
+    margin-top: 12px;
+}
+
+.anything-card .spin-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+@media (max-width: 500px) {
+    .anything-card .wheel-stage {
+        height: 230px;
+    }
+
+    .anything-wheel {
+        width: 190px;
+        height: 190px;
+    }
+
+    .wheel-choice-button {
+        font-size: 12px;
+    }
+}
+
+body.page-wheel.page-anything {
+    background:
+        radial-gradient(ellipse at 12% 18%, rgba(255, 215, 224, 0.72), transparent 34%),
+        radial-gradient(ellipse at 88% 76%, rgba(255, 229, 158, 0.48), transparent 32%),
+        #fff8f3;
+    color: #543044;
+}
+
+.page-anything .wheel-shell .topbar {
+    background: linear-gradient(110deg, #f8dce5, #fff0bf);
+}
+
+.page-anything .brand,
+.page-anything .top-nav .top-link,
+.page-anything .top-nav .top-link span {
+    color: #753b57;
+}
+
+.page-anything .brand-mark {
+    stroke: #d97798;
+}
+
+.page-anything .brand-mark .wheel-hub {
+    fill: #d97798;
+}
+
+.page-anything .top-nav .top-link:hover,
+.page-anything .top-nav .top-link:hover span {
+    color: #ad6d31;
+}
+
+.page-anything .decoration-flower {
+    position: absolute;
+    font-size: 27px;
+    line-height: 1;
+    opacity: 0.78;
+}
+
+.page-anything .decoration-flower-one {
+    top: 31%;
+    left: 18%;
+    color: #e85d8e;
+}
+
+.page-anything .decoration-flower-two {
+    top: 71%;
+    right: 17%;
+    color: #e6ad2e;
+    font-size: 23px;
+}
+
+.page-anything .decoration-flower-three {
+    bottom: 10%;
+    left: 42%;
+    color: #d9477b;
+    font-size: 20px;
+}
+
+.page-anything .decoration-wheel {
+    border-color: rgba(217, 79, 130, 0.38);
+    background:
+        radial-gradient(circle, #fff8f3 0 11%, #e85d8e 12% 18%, transparent 19%),
+        conic-gradient(
+            #e85d8e 0 43deg, #fff8f3 43deg 46deg,
+            #f7c74d 46deg 88deg, #fff8f3 88deg 91deg,
+            #d9477b 91deg 133deg, #fff8f3 133deg 136deg,
+            #ffdc78 136deg 178deg, #fff8f3 178deg 181deg,
+            #ed7da2 181deg 223deg, #fff8f3 223deg 226deg,
+            #f4b942 226deg 268deg, #fff8f3 268deg 271deg,
+            #c93c70 271deg 313deg, #fff8f3 313deg 316deg,
+            #ffe69a 316deg 358deg, #fff8f3 358deg
+        );
+}
+
+.page-anything .game-card {
+    border-color: #f2d6d3;
+    background: #fffdf9;
+    box-shadow: 0 18px 42px rgba(153, 77, 95, 0.12);
+}
+
+.page-anything .card-heading h1 {
+    color: #6b304a;
+}
+
+.page-anything .card-heading p,
+.page-anything .status,
+.page-anything .choice-input-label {
+    color: #926b79;
+}
+
+.page-anything .anything-wheel {
+    border-color: #efb8c5;
+    background: #fff4ea;
+}
+
+.page-anything .wheel-choice-button {
+    color: #5d3044;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.72);
+}
+
+.page-anything .anything-wheel .wheel-inner {
+    background: #fffaf0;
+    box-shadow: 0 4px 14px rgba(155, 73, 91, 0.15);
+}
+
+.page-anything #anythingResult {
+    color: #9c3e65;
+}
+
+.page-anything #anythingCount {
+    color: #b28a3e;
+}
+
+.page-anything .pointer {
+    background: #ffe08a;
+    filter: drop-shadow(0 3px 4px rgba(120, 63, 71, 0.2));
+}
+
+.page-anything .choice-input-row input {
+    border-color: #edc7cd;
+    color: #543044;
+    background: #ffffff;
+}
+
+.page-anything .choice-input-row input:focus {
+    outline-color: #eaa4b6;
+}
+
+.page-anything .small-action {
+    border-color: #dc648d;
+    background: #fce8ed;
+    color: #873853;
+}
+
+.page-anything .small-action:hover {
+    background: #f8d5df;
+}
+
+.page-anything .anything-card .spin-button {
+    background: #f3b4c7;
+    color: #63384d;
+}
+
+.page-anything .anything-card .spin-button:hover:not(:disabled) {
+    background: #eba2b9;
+}
+
+.page-anything .anything-card .spin-button:disabled {
+    background: #f4d3dd;
+    opacity: 0.75;
+}
+
+.page-anything .decoration-item {
+    position: absolute;
+    font-size: 28px;
+    line-height: 1;
+    opacity: 0.76;
+    filter: drop-shadow(0 3px 5px rgba(123, 69, 63, 0.12));
+}
+
+.page-anything .decoration-item-one { top: 20%; left: 13%; }
+.page-anything .decoration-item-two { top: 34%; right: 12%; font-size: 32px; transform: rotate(-18deg); }
+.page-anything .decoration-item-three { top: 69%; left: 8%; font-size: 24px; }
+.page-anything .decoration-item-four { top: 17%; right: 32%; font-size: 23px; }
+.page-anything .decoration-item-five { bottom: 12%; right: 24%; font-size: 31px; }
+.page-anything .decoration-item-six { bottom: 23%; left: 27%; font-size: 24px; }
+
+@media (max-width: 500px) {
+    .page-anything .decoration-item-two,
+    .page-anything .decoration-item-four {
+        display: none;
+    }
+
+    .page-anything .decoration-item-one { left: 4%; }
+    .page-anything .decoration-item-three { left: 2%; }
+    .page-anything .decoration-item-five { right: 8%; }
+}
+
+body.page-wheel.page-anything {
+    background:
+        radial-gradient(ellipse at 12% 18%, rgba(139, 218, 202, 0.42), transparent 34%),
+        radial-gradient(ellipse at 88% 76%, rgba(255, 190, 151, 0.34), transparent 32%),
+        linear-gradient(135deg, #f3fbf7, #fffaf1);
+    color: #28564f;
+}
+
+.page-anything .wheel-shell .topbar {
+    background: linear-gradient(110deg, #d6f0e8, #e8f4e9 62%, #fff0dc);
+}
+
+.page-anything .brand,
+.page-anything .top-nav .top-link,
+.page-anything .top-nav .top-link span {
+    color: #32685f;
+}
+
+.page-anything .brand-mark {
+    stroke: #4a9b8b;
+}
+
+.page-anything .brand-mark .wheel-hub {
+    fill: #e58b68;
+}
+
+.page-anything .top-nav .top-link:hover,
+.page-anything .top-nav .top-link:hover span {
+    color: #bd684d;
+}
+
+.page-anything .decoration-wheel {
+    border-color: rgba(63, 151, 134, 0.4);
+    background:
+        radial-gradient(circle, #f5fbf6 0 11%, #e58b68 12% 18%, transparent 19%),
+        conic-gradient(
+            #4b9d8c 0 43deg, #f5fbf6 43deg 46deg,
+            #f2b47d 46deg 88deg, #f5fbf6 88deg 91deg,
+            #e58069 91deg 133deg, #f5fbf6 133deg 136deg,
+            #b7dfd2 136deg 178deg, #f5fbf6 178deg 181deg,
+            #3f8f82 181deg 223deg, #f5fbf6 223deg 226deg,
+            #f0cd87 226deg 268deg, #f5fbf6 268deg 271deg,
+            #69b5a4 271deg 313deg, #f5fbf6 313deg 316deg,
+            #efaa8c 316deg 358deg, #f5fbf6 358deg
+        );
+}
+
+.page-anything .game-card {
+    border-color: #d3e8df;
+    background: #fffefa;
+    box-shadow: 0 18px 42px rgba(49, 112, 98, 0.13);
+}
+
+.page-anything .card-heading h1 {
+    color: #2f695f;
+}
+
+.page-anything .card-heading p,
+.page-anything .status,
+.page-anything .choice-input-label {
+    color: #698b82;
+}
+
+.page-anything .anything-wheel {
+    border-color: #80c4b5;
+    background: #e7f4ef;
+}
+
+.page-anything .wheel-choice-button {
+    color: #214f49;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.page-anything .anything-wheel .wheel-inner {
+    background: #fffaf0;
+    box-shadow: 0 4px 14px rgba(49, 112, 98, 0.14);
+}
+
+.page-anything #anythingResult {
+    color: #347b70;
+}
+
+.page-anything #anythingCount {
+    color: #bf8057;
+}
+
+.page-anything .pointer {
+    background: #ec9878;
+    filter: drop-shadow(0 3px 4px rgba(73, 100, 84, 0.2));
+}
+
+.page-anything .choice-input-row input {
+    border-color: #bddbd1;
+    color: #28564f;
+    background: #ffffff;
+}
+
+.page-anything .choice-input-row input:focus {
+    outline-color: #8bcbbb;
+}
+
+.page-anything .small-action {
+    border-color: #63a99a;
+    background: #e0f1eb;
+    color: #2d6d62;
+}
+
+.page-anything .small-action:hover {
+    background: #cde9df;
+}
+
+.page-anything .anything-card .spin-button {
+    background: #73b9a7;
+    color: #173f39;
+}
+
+.page-anything .anything-card .spin-button:hover:not(:disabled) {
+    background: #5da994;
+}
+
+.page-anything .anything-card .spin-button:disabled {
+    background: #c2e0d7;
+    opacity: 0.85;
+}
+
+.page-anything .decoration-item-one,
+.page-anything .decoration-item-five {
+    filter: drop-shadow(0 3px 5px rgba(55, 119, 102, 0.16));
+}

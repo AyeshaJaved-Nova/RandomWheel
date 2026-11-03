@@ -4,46 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#eef5ee">
+    <meta name="theme-color" content="#f3f9ff">
     <meta name="description" content="Spin a random number between a chosen range.">
-    <title>Random Wheel | Spin a number</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'wheel/style.css' %}">
+    <title>Random Wheel</title>
+    <link rel="stylesheet" href="{% static 'wheel/random_wheel.css' %}?v=9">
 </head>
 <body class="page-wheel">
     <div class="page-shell wheel-shell">
         <header class="topbar">
             <a class="brand" href="{% url 'home' %}" aria-label="Return to home page">
-                <span class="brand-mark" aria-hidden="true">
-                    <span></span><span></span><span></span><span></span>
-                </span>
-                <span>Random <strong>Wheel</strong></span>
+                <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+                    <circle cx="24" cy="24" r="20" />
+                    <path d="M24 4v40M4 24h40M10 10l28 28M38 10 10 38" />
+                    <circle class="wheel-hub" cx="24" cy="24" r="4" />
+                </svg>
+                <span>Random Wheel</span>
             </a>
-            <a class="top-link" href="{% url 'home' %}">Back home <span aria-hidden="true">↗</span></a>
+            <nav class="top-nav" aria-label="Main navigation">
+                <a class="top-link game-nav-link" href="{% url 'random_wheel' %}" aria-current="page">Random Number</a>
+                <a class="top-link game-nav-link" href="{% url 'random_colour' %}">Random Colour</a>
+                <a class="top-link game-nav-link" href="{% url 'random_anything' %}">Random Anything</a>
+                <a class="top-link game-nav-link back-home-link" href="{% url 'home' %}">Back home <span aria-hidden="true">↗</span></a>
+            </nav>
         </header>
 
         <main class="wheel-main">
             <section class="wheel-layout" aria-labelledby="wheel-title">
-                <div class="wheel-copy">
-                    <span class="eyebrow">RANDOM DECISION MAKER</span>
-                    <h1 id="wheel-title">Pick a number and let the wheel decide.</h1>
-                    <p>Choose any range, spin once, and get a fair result without second-guessing.</p>
+                <div class="wheel-decorations" aria-hidden="true">
+                    <span class="decoration-number">8</span>
+                    <span class="decoration-number">31</span>
+                    <span class="decoration-number">4</span>
+                    <span class="decoration-number">62</span>
+                    <span class="decoration-number">17</span>
+                    <span class="decoration-number">9</span>
+                    <span class="decoration-wheel decoration-wheel-one"></span>
+                    <span class="decoration-wheel decoration-wheel-two"></span>
+                    <span class="decoration-wheel decoration-wheel-three"></span>
                 </div>
-
                 <div class="game-card" id="spinner">
                     <div class="card-heading">
                         <div>
-                            <span class="section-kicker">THE NUMBER WHEEL</span>
-                            <h2>Let’s find your number</h2>
+                            <h1 id="wheel-title">Random Wheel</h1>
+                            <p>Choose a range and spin.</p>
                         </div>
-                        <span class="sparkle" aria-hidden="true">✦</span>
                     </div>
 
                     <div class="wheel-stage">
-                        <span class="orbit orbit-one"></span>
-                        <span class="orbit orbit-two"></span>
                         <span class="pointer" aria-hidden="true"></span>
                         <div class="wheel" aria-label="Random number wheel">
                             <div class="wheel-inner">
@@ -51,8 +57,6 @@
                                 <small>YOUR PICK</small>
                             </div>
                         </div>
-                        <span class="orbit-dot dot-one"></span>
-                        <span class="orbit-dot dot-two"></span>
                     </div>
 
                     <p id="status" class="status" role="status" aria-live="polite">Set your range, then give it a whirl.</p>
@@ -80,18 +84,14 @@
                         <span class="button-arrow" aria-hidden="true">↗</span>
                     </button>
                     <button id="surpriseBtn" class="surprise-button" type="button">
-                        <span aria-hidden="true">✦</span> Surprise me <span class="surprise-range">1–200</span>
+                        Surprise me <span class="surprise-range">1–200</span>
                     </button>
 
-                    <div class="card-foot">
-                        <span><i></i> ALWAYS RANDOM</span>
-                        <span>MADE FOR THE “UMM…” MOMENTS</span>
-                    </div>
                 </div>
             </section>
         </main>
     </div>
 
-    <script src="{% static 'wheel/script.js' %}"></script>
+    <script src="{% static 'wheel/script.js' %}" data-random-url="{% url 'random_number' %}" data-spin-sound="{% static 'wheel/spin.mp3' %}"></script>
 </body>
 </html>

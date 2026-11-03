@@ -5,7 +5,8 @@ const minInput = document.getElementById('minInput');
 const maxInput = document.getElementById('maxInput');
 const spinButton = document.getElementById('spinBtn');
 const surpriseButton = document.getElementById('surpriseBtn');
-const spinSound = new Audio('/static/wheel/spin.mp3');
+const scriptConfig = document.currentScript.dataset;
+const spinSound = new Audio(scriptConfig.spinSound);
 
 let rotation = 0;
 let spinning = false;
@@ -26,7 +27,7 @@ async function spinWheel(min, max) {
 
     try {
         const query = new URLSearchParams({ min, max });
-        const response = await fetch(`/random/?${query}`);
+        const response = await fetch(`${scriptConfig.randomUrl}?${query}`);
         const data = await response.json();
 
         if (!response.ok) {

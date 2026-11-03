@@ -1,0 +1,331 @@
+.color-page .topbar {
+    background: linear-gradient(110deg, #f8dce5, #fff0bf);
+}
+
+.page-wheel.color-page .brand,
+.page-wheel.color-page .top-nav .top-link,
+.page-wheel.color-page .top-nav .top-link span {
+    color: #753b57;
+}
+
+.page-wheel.color-page .brand-mark {
+    stroke: #d97798;
+}
+
+.page-wheel.color-page .brand-mark .wheel-hub {
+    fill: #d97798;
+}
+
+.color-page {
+    background:
+        radial-gradient(ellipse at 9% 22%, rgba(231, 76, 60, 0.17), transparent 30%),
+        radial-gradient(ellipse at 88% 20%, rgba(243, 156, 18, 0.18), transparent 28%),
+        radial-gradient(ellipse at 86% 76%, rgba(46, 204, 113, 0.15), transparent 32%),
+        radial-gradient(ellipse at 13% 82%, rgba(155, 89, 182, 0.14), transparent 30%),
+        linear-gradient(135deg, #fff8f4 0%, #fffdf6 28%, #f4fbff 62%, #fbf5ff 100%);
+    background-attachment: fixed;
+}
+
+.color-page .game-card {
+    border: 1px solid transparent;
+    background:
+        linear-gradient(#ffffff, #ffffff) padding-box,
+        linear-gradient(135deg, rgba(232, 93, 142, 0.55), rgba(247, 199, 77, 0.7), rgba(217, 71, 123, 0.45)) border-box;
+}
+
+.color-page .color-palette {
+    background: linear-gradient(120deg, #fff0f3, #fff7df 58%, #fff8f3);
+}
+
+.color-page .decoration-number {
+    color: #71647a;
+    opacity: 0.3;
+}
+
+.color-page .decoration-wheel {
+    background:
+        radial-gradient(circle, #fff8f3 0 11%, #e85d8e 12% 18%, transparent 19%),
+        conic-gradient(#e85d8e 0 43deg, #f7c74d 43deg 88deg, #d9477b 88deg 133deg, #ffdc78 133deg 178deg, #ed7da2 178deg 223deg, #f4b942 223deg 268deg, #c93c70 268deg 313deg, #ffe69a 313deg 360deg);
+    opacity: 0.43;
+}
+
+.color-card .wheel-stage {
+    height: 260px;
+}
+
+.color-palette {
+    margin: 18px 0 0;
+    padding: 12px;
+    border: 1px solid #d8e5f2;
+    border-radius: 5px;
+    background: #f7faff;
+}
+
+.color-palette legend {
+    position: relative;
+    top: 8px;
+    margin-bottom: 8px;
+    padding: 0 5px;
+    background: inherit;
+    color: #233b61;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#paletteHelp {
+    margin: 0 0 10px;
+    color: #66788c;
+    font-size: 12px;
+}
+
+.color-options {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 7px;
+    max-height: 155px;
+    overflow-y: auto;
+}
+
+.color-choice {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 5px;
+    color: #34495e;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.color-choice input {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    accent-color: #397cc2;
+}
+
+.color-swatch {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(38, 54, 75, 0.18);
+    border-radius: 50%;
+    background: var(--swatch-color);
+}
+
+.custom-color-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #d8e5f2;
+}
+
+.custom-color-row label {
+    flex: 1;
+    color: #52657b;
+    font-size: 12px;
+}
+
+.custom-color-row input[type="color"] {
+    width: 34px;
+    height: 30px;
+    padding: 2px;
+    border: 1px solid #c8d9eb;
+    border-radius: 4px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.custom-color-row .small-action {
+    min-height: 32px;
+    min-width: 84px;
+    font-size: 12px;
+    padding: 0 10px;
+    border: 1px solid #397cc2;
+    border-radius: 5px;
+    background: #edf5fc;
+    color: #233b61;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.custom-color-row .small-action:hover {
+    background: #dcecf9;
+}
+
+.color-wheel {
+    width: 210px;
+    height: 210px;
+    background: conic-gradient(
+        #e74c3c 0deg 28deg, #ffffff 28deg 30deg,
+        #f39c12 30deg 58deg, #ffffff 58deg 60deg,
+        #f1c40f 60deg 88deg, #ffffff 88deg 90deg,
+        #2ecc71 90deg 118deg, #ffffff 118deg 120deg,
+        #1abc9c 120deg 148deg, #ffffff 148deg 150deg,
+        #35bde6 150deg 178deg, #ffffff 178deg 180deg,
+        #3498db 180deg 208deg, #ffffff 208deg 210deg,
+        #34495e 210deg 238deg, #ffffff 238deg 240deg,
+        #9b59b6 240deg 268deg, #ffffff 268deg 270deg,
+        #e84393 270deg 298deg, #ffffff 298deg 300deg,
+        #9a6b45 300deg 328deg, #ffffff 328deg 330deg,
+        #95a5a6 330deg 358deg, #ffffff 358deg 360deg
+    );
+    box-shadow: none;
+}
+
+.color-wheel::before {
+    display: none;
+}
+
+.color-card .wheel-inner {
+    width: 106px;
+    height: 106px;
+    background: #ffffff;
+    transition: transform 3s cubic-bezier(0.12, 0.76, 0.2, 1);
+}
+
+#colorResult {
+    max-width: 90px;
+    overflow: hidden;
+    color: #315d9a;
+    font-size: 22px;
+    text-overflow: ellipsis;
+}
+
+#colorName {
+    color: #7489a3;
+    text-align: center;
+}
+
+.color-card .spin-button {
+    min-height: 46px;
+    margin-top: 8px;
+}
+
+.color-card .spin-button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+@media (max-width: 500px) {
+    .color-card .wheel-stage {
+        height: 240px;
+    }
+
+    .color-wheel {
+        width: 190px;
+        height: 190px;
+    }
+
+    .color-options {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .color-palette {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .color-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .custom-color-row {
+        flex-wrap: wrap;
+    }
+
+    .custom-color-row label {
+        flex: 1 0 100%;
+    }
+}
+
+.color-page {
+    background:
+        radial-gradient(ellipse at 8% 18%, rgba(255, 99, 132, 0.2), transparent 30%),
+        radial-gradient(ellipse at 91% 19%, rgba(255, 190, 64, 0.22), transparent 28%),
+        radial-gradient(ellipse at 83% 82%, rgba(68, 190, 160, 0.19), transparent 31%),
+        radial-gradient(ellipse at 13% 78%, rgba(115, 124, 240, 0.18), transparent 30%),
+        linear-gradient(135deg, #fff8f3, #fffefa 48%, #f6f5ff);
+    background-attachment: fixed;
+}
+
+.color-page .topbar {
+    background: linear-gradient(110deg, #ffe2eb, #fff2c9 52%, #e2f6ec);
+}
+
+.page-wheel.color-page .brand,
+.page-wheel.color-page .top-nav .top-link,
+.page-wheel.color-page .top-nav .top-link span {
+    color: #69517b;
+}
+
+.page-wheel.color-page .brand-mark {
+    stroke: #9c68a8;
+}
+
+.page-wheel.color-page .brand-mark .wheel-hub {
+    fill: #9c68a8;
+}
+
+.color-page .decoration-dot {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 3px 12px rgba(61, 58, 89, 0.18);
+}
+
+.color-page .decoration-dot-one { top: 17%; left: 16%; background: #f06b80; }
+.color-page .decoration-dot-two { top: 28%; right: 12%; width: 24px; height: 24px; background: #ffc247; }
+.color-page .decoration-dot-three { top: 63%; left: 8%; width: 14px; height: 14px; background: #55bfa0; }
+.color-page .decoration-dot-four { top: 74%; right: 18%; width: 21px; height: 21px; background: #8876df; }
+.color-page .decoration-dot-five { bottom: 12%; left: 31%; width: 13px; height: 13px; background: #50a9df; }
+.color-page .decoration-dot-six { top: 12%; right: 35%; width: 13px; height: 13px; background: #ed8c46; }
+.color-page .decoration-dot-seven { bottom: 22%; right: 39%; width: 16px; height: 16px; background: #ef78b2; }
+.color-page .decoration-dot-eight { top: 48%; right: 7%; width: 12px; height: 12px; background: #8dbb54; }
+
+.color-page .decoration-wheel {
+    border-color: rgba(147, 104, 168, 0.38);
+    background:
+        radial-gradient(circle, #fffefa 0 11%, #ed8c46 12% 18%, transparent 19%),
+        conic-gradient(
+            #f06b80 0 43deg, #fffefa 43deg 46deg,
+            #ffc247 46deg 88deg, #fffefa 88deg 91deg,
+            #55bfa0 91deg 133deg, #fffefa 133deg 136deg,
+            #50a9df 136deg 178deg, #fffefa 178deg 181deg,
+            #8876df 181deg 223deg, #fffefa 223deg 226deg,
+            #ef78b2 226deg 268deg, #fffefa 268deg 271deg,
+            #8dbb54 271deg 313deg, #fffefa 313deg 316deg,
+            #ed8c46 316deg 358deg, #fffefa 358deg
+        );
+}
+
+.color-page .game-card {
+    border-color: #eadcf0;
+    box-shadow: 0 18px 42px rgba(112, 80, 129, 0.13);
+}
+
+.color-page .color-palette {
+    border-color: #eadcf0;
+    background: linear-gradient(120deg, #fff1f4, #fff8df 52%, #eef9f3);
+}
+
+.page-wheel.color-page .color-palette {
+    border-color: #eadcf0;
+    background: linear-gradient(120deg, #fff1f4, #fff8df 52%, #eef9f3);
+}
+
+.color-page .color-wheel {
+    box-shadow: 0 12px 28px rgba(78, 70, 99, 0.18);
+}
+
+@media (max-width: 500px) {
+    .color-page .decoration-dot-two,
+    .color-page .decoration-dot-four,
+    .color-page .decoration-dot-eight {
+        display: none;
+    }
+}

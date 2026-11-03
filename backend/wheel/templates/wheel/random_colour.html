@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff8f3">
+    <meta name="description" content="Spin the wheel to pick a random colour.">
+    <title>Random Colour | Random Wheel</title>
+    <link rel="stylesheet" href="{% static 'wheel/random_wheel.css' %}?v=9">
+    <link rel="stylesheet" href="{% static 'wheel/random_colour.css' %}?v=11">
+</head>
+<body class="page-wheel color-page">
+    <div class="page-shell wheel-shell">
+        <header class="topbar">
+            <a class="brand" href="{% url 'home' %}" aria-label="Random Wheel home">
+                <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+                    <circle cx="24" cy="24" r="20" />
+                    <path d="M24 4v40M4 24h40M10 10l28 28M38 10 10 38" />
+                    <circle class="wheel-hub" cx="24" cy="24" r="4" />
+                </svg>
+                <span>Random Wheel</span>
+            </a>
+            <nav class="top-nav" aria-label="Main navigation">
+                <a class="top-link game-nav-link" href="{% url 'random_wheel' %}">Random Number</a>
+                <a class="top-link game-nav-link" href="{% url 'random_colour' %}" aria-current="page">Random Colour</a>
+                <a class="top-link game-nav-link" href="{% url 'random_anything' %}">Random Anything</a>
+                <a class="top-link game-nav-link back-home-link" href="{% url 'home' %}">Back home <span aria-hidden="true">↗</span></a>
+            </nav>
+        </header>
+
+        <main class="wheel-main">
+            <section class="wheel-layout" aria-labelledby="wheel-title">
+                <div class="wheel-decorations" aria-hidden="true">
+                    <span class="decoration-dot decoration-dot-one"></span>
+                    <span class="decoration-dot decoration-dot-two"></span>
+                    <span class="decoration-dot decoration-dot-three"></span>
+                    <span class="decoration-dot decoration-dot-four"></span>
+                    <span class="decoration-dot decoration-dot-five"></span>
+                    <span class="decoration-dot decoration-dot-six"></span>
+                    <span class="decoration-dot decoration-dot-seven"></span>
+                    <span class="decoration-dot decoration-dot-eight"></span>
+                    <span class="decoration-wheel decoration-wheel-one"></span>
+                    <span class="decoration-wheel decoration-wheel-two"></span>
+                    <span class="decoration-wheel decoration-wheel-three"></span>
+                </div>
+                <div class="game-card color-card">
+                    <div class="card-heading">
+                        <div>
+                            <h1 id="wheel-title">Random Colour</h1>
+                            <p>Choose colours from the palette, then spin.</p>
+                        </div>
+                    </div>
+                    <fieldset class="color-palette" aria-describedby="paletteHelp">
+                        <legend>Choose your colours</legend>
+                        <p id="paletteHelp">Pick the colours you want on your wheel.</p>
+                        <div class="color-options">
+                            <label class="color-choice"><input type="checkbox" checked data-name="Red" data-color="#e74c3c"><span class="color-swatch" style="--swatch-color: #e74c3c"></span><span>Red</span></label>
+                            <label class="color-choice"><input type="checkbox" checked data-name="Orange" data-color="#f39c12"><span class="color-swatch" style="--swatch-color: #f39c12"></span><span>Orange</span></label>
+                            <label class="color-choice"><input type="checkbox" checked data-name="Yellow" data-color="#f1c40f"><span class="color-swatch" style="--swatch-color: #f1c40f"></span><span>Yellow</span></label>
+                            <label class="color-choice"><input type="checkbox" checked data-name="Green" data-color="#2ecc71"><span class="color-swatch" style="--swatch-color: #2ecc71"></span><span>Green</span></label>
+                            <label class="color-choice"><input type="checkbox" checked data-name="Teal" data-color="#1abc9c"><span class="color-swatch" style="--swatch-color: #1abc9c"></span><span>Teal</span></label>
+                            <label class="color-choice"><input type="checkbox" checked data-name="Cyan" data-color="#35bde6"><span class="color-swatch" style="--swatch-color: #35bde6"></span><span>Cyan</span></label>
+                            <label class="color-choice"><input type="checkbox" checked data-name="Blue" data-color="#3498db"><span class="color-swatch" style="--swatch-color: #3498db"></span><span>Blue</span></label>
+                            <label class="color-choice"><input type="checkbox" checked data-name="Navy" data-color="#34495e"><span class="color-swatch" style="--swatch-color: #34495e"></span><span>Navy</span></label>
+                            <label class="color-choice"><input type="checkbox" checked data-name="Purple" data-color="#9b59b6"><span class="color-swatch" style="--swatch-color: #9b59b6"></span><span>Purple</span></label>
+                            <label class="color-choice"><input type="checkbox" checked data-name="Pink" data-color="#e84393"><span class="color-swatch" style="--swatch-color: #e84393"></span><span>Pink</span></label>
+                            <label class="color-choice"><input type="checkbox" checked data-name="Brown" data-color="#9a6b45"><span class="color-swatch" style="--swatch-color: #9a6b45"></span><span>Brown</span></label>
+                            <label class="color-choice"><input type="checkbox" checked data-name="Grey" data-color="#95a5a6"><span class="color-swatch" style="--swatch-color: #95a5a6"></span><span>Grey</span></label>
+                        </div>
+                        <div class="custom-color-row">
+                            <label for="customColor">Add your own colour</label>
+                            <input id="customColor" type="color" value="#397cc2">
+                            <button id="addColorBtn" class="small-action" type="button">Add colour</button>
+                        </div>
+                    </fieldset>
+                    <div class="wheel-stage">
+                        <span class="pointer" aria-hidden="true"></span>
+                        <div class="wheel color-wheel" aria-hidden="true">
+                            <div class="wheel-inner">
+                                <span id="colorResult" aria-live="polite">?</span>
+                                <small id="colorName">YOUR COLOUR</small>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="colorStatus" class="status" role="status" aria-live="polite">Press spin to get a random colour.</p>
+                    <button id="colorSpinBtn" class="spin-button" type="button" disabled>
+                        <span>Spin the wheel</span>
+                        <span class="button-arrow" aria-hidden="true">↗</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="{% static 'wheel/random_colour.js' %}?v=5" data-spin-sound="{% static 'wheel/spin.mp3' %}"></script>
+</body>
+</html>

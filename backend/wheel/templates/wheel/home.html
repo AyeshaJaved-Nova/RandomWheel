@@ -4,93 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A calm, pastel-inspired random wheel for quick decisions.">
-    <title>Random Wheel | Make a choice</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'wheel/style.css' %}">
+    <meta name="theme-color" content="#e7eff6">
+    <meta name="description" content="Choose a random number, colour, or your own list of options.">
+    <title>Random Wheel</title>
+    <link rel="stylesheet" href="{% static 'wheel/home.css' %}?v=25">
 </head>
 <body class="page-home">
     <div class="page-shell home-shell">
         <header class="topbar">
             <a class="brand" href="{% url 'home' %}" aria-label="Random Wheel home">
-                <span class="brand-mark" aria-hidden="true">
-                    <span></span><span></span><span></span><span></span>
-                </span>
-                <span>Random <strong>Wheel</strong></span>
+                <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+                    <circle cx="24" cy="24" r="20" />
+                    <path d="M24 4v40M4 24h40M10 10l28 28M38 10 10 38" />
+                    <circle class="wheel-hub" cx="24" cy="24" r="4" />
+                </svg>
+                <span>Random Wheel</span>
             </a>
-            <nav class="top-nav" aria-label="Main navigation">
-                <a href="#features">Features</a>
-                <a class="primary-link" href="{% url 'random_wheel' %}">Try the wheel</a>
-            </nav>
         </header>
-
         <main class="home-main">
-            <section class="hero home-hero">
-                <div class="hero-copy">
-                    <span class="eyebrow">PASTEL DECISIONS</span>
-                    <h1>Let fate <span>pick the next step</span>.</h1>
-                    <p class="intro">Need a quick answer without overthinking? Set a range, spin the wheel, and let the result take the pressure off.</p>
-
-                    <div class="hero-actions">
-                        <a class="primary-button" href="{% url 'random_wheel' %}">Open the wheel</a>
-                        <a class="secondary-button" href="#features">How it works</a>
-                    </div>
-
-                    <div class="mini-stats" aria-label="Quick stats">
-                        <div>
-                            <strong>1-200</strong>
-                            <span>Range</span>
-                        </div>
-                        <div>
-                            <strong>Instant</strong>
-                            <span>Spin</span>
-                        </div>
-                        <div>
-                            <strong>Simple</strong>
-                            <span>Choice</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feature-preview" aria-label="Random wheel preview">
-                    <div class="preview-card">
-                        <span class="preview-badge">Spin range</span>
-                        <div class="range-preview">
-                            <span>1</span>
-                            <span class="divider">—</span>
-                            <span>100</span>
-                        </div>
-                        <div class="preview-wheel" aria-hidden="true">
-                            <div class="preview-wheel-core">?</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="features" class="feature-section" aria-labelledby="features-heading">
-                <div class="section-heading">
-                    <span class="section-kicker">WHY PEOPLE USE IT</span>
-                    <h2 id="features-heading">Small choices, easier with a little luck.</h2>
-                </div>
-
-                <div class="feature-grid">
-                    <article class="feature-card">
-                        <span class="feature-icon">✦</span>
-                        <h3>Simple setup</h3>
-                        <p>Choose your minimum and maximum numbers in seconds, then let the wheel do the rest.</p>
-                    </article>
-                    <article class="feature-card">
-                        <span class="feature-icon">⟳</span>
-                        <h3>Quick decision</h3>
-                        <p>Refresh your thinking in one motion instead of getting stuck in endless comparisons.</p>
-                    </article>
-                    <article class="feature-card">
-                        <span class="feature-icon">✓</span>
-                        <h3>Fair result</h3>
-                        <p>Every number in your range has the same chance, so the answer feels honest and fun.</p>
-                    </article>
+            <div class="background-numbers" aria-hidden="true">
+                <span class="background-flower">✿</span>
+                <span class="background-flower">❀</span>
+                <span class="background-flower">✽</span>
+                <span class="background-flower">✾</span>
+                <span class="background-flower">✿</span>
+                <span class="background-flower">❀</span>
+                <span class="background-flower">✽</span>
+                <span class="background-flower">✾</span>
+                <span class="background-flower">❀</span>
+                <span class="background-flower">✿</span>
+                <span class="background-wheel background-wheel-one"></span>
+                <span class="background-wheel background-wheel-two"></span>
+                <span class="background-wheel background-wheel-three"></span>
+                <span class="background-wheel background-wheel-four"></span>
+                <span class="background-wheel background-wheel-five"></span>
+                <span class="background-wheel background-wheel-six"></span>
+                <span class="background-wheel background-wheel-seven"></span>
+                <span class="background-wheel background-wheel-eight"></span>
+            </div>
+            <section class="home-hero" aria-labelledby="home-title">
+                <div class="home-logo" aria-hidden="true"></div>
+                <h1 id="home-title">Random Wheel</h1>
+                <p>What would you like the wheel to pick?</p>
+                <div class="home-actions">
+                    <a class="primary-button" href="{% url 'random_wheel' %}">Random Number</a>
+                    <a class="primary-button secondary-choice" href="{% url 'random_colour' %}">Random Colour</a>
+                    <a class="primary-button custom-choice" href="{% url 'random_anything' %}">Random Anything</a>
                 </div>
             </section>
         </main>

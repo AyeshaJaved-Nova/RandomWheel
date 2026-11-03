@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f3fbf7">
+    <meta name="description" content="Add your own choices and spin the wheel to pick one.">
+    <title>Random Anything | Random Wheel</title>
+    <link rel="stylesheet" href="{% static 'wheel/random_wheel.css' %}?v=9">
+    <link rel="stylesheet" href="{% static 'wheel/random_anything.css' %}?v=15">
+</head>
+<body class="page-wheel page-anything">
+    <div class="page-shell wheel-shell">
+        <header class="topbar">
+            <a class="brand" href="{% url 'home' %}" aria-label="Random Wheel home">
+                <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+                    <circle cx="24" cy="24" r="20" />
+                    <path d="M24 4v40M4 24h40M10 10l28 28M38 10 10 38" />
+                    <circle class="wheel-hub" cx="24" cy="24" r="4" />
+                </svg>
+                <span>Random Wheel</span>
+            </a>
+            <nav class="top-nav" aria-label="Main navigation">
+                <a class="top-link game-nav-link" href="{% url 'random_wheel' %}">Random Number</a>
+                <a class="top-link game-nav-link" href="{% url 'random_colour' %}">Random Colour</a>
+                <a class="top-link game-nav-link" href="{% url 'random_anything' %}" aria-current="page">Random Anything</a>
+                <a class="top-link game-nav-link back-home-link" href="{% url 'home' %}">Back home <span aria-hidden="true">↗</span></a>
+            </nav>
+        </header>
+
+        <main class="wheel-main">
+            <section class="wheel-layout" aria-labelledby="wheel-title">
+                <div class="wheel-decorations" aria-hidden="true">
+                    <span class="decoration-item decoration-item-one">🍓</span>
+                    <span class="decoration-item decoration-item-two">👟</span>
+                    <span class="decoration-item decoration-item-three">🍋</span>
+                    <span class="decoration-item decoration-item-four">🍊</span>
+                    <span class="decoration-item decoration-item-five">🍉</span>
+                    <span class="decoration-item decoration-item-six">🥑</span>
+                    <span class="decoration-wheel decoration-wheel-one"></span>
+                    <span class="decoration-wheel decoration-wheel-two"></span>
+                    <span class="decoration-wheel decoration-wheel-three"></span>
+                </div>
+                <div class="game-card anything-card">
+                    <div class="card-heading">
+                        <div>
+                            <h1 id="wheel-title">Random Anything</h1>
+                            <p>Add your choices to fill the wheel, then spin.</p>
+                        </div>
+                    </div>
+
+                    <div class="wheel-stage">
+                        <span class="pointer" aria-hidden="true"></span>
+                        <div class="wheel anything-wheel">
+                            <div id="wheelChoices" class="wheel-choices" role="list" aria-label="Your wheel choices"></div>
+                            <div class="wheel-inner">
+                                <span id="anythingResult">Add choices</span>
+                                <small id="anythingCount">TO START</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p id="anythingStatus" class="status" role="status" aria-live="polite">Fill your wheel with your choices.</p>
+
+                    <form id="choiceForm" class="choice-form">
+                        <label class="choice-input-label" for="choiceInput">Your choice</label>
+                        <div class="choice-input-row">
+                            <input id="choiceInput" type="text" maxlength="60" placeholder="Type something to add..." autocomplete="off">
+                            <button class="small-action" type="submit">Add</button>
+                        </div>
+                    </form>
+
+                    <button id="anythingSpinBtn" class="spin-button" type="button" disabled>
+                        <span>Spin the wheel</span>
+                        <span class="button-arrow" aria-hidden="true">↗</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="{% static 'wheel/random_anything.js' %}?v=10" data-spin-sound="{% static 'wheel/spin.mp3' %}"></script>
+</body>
+</html>
